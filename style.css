@@ -1,0 +1,124 @@
+/* 
+### Primary
+
+- Light Cyan: hsl(193, 38%, 86%)
+- Neon Green: hsl(150, 100%, 66%)
+
+### Neutral
+
+- Grayish Blue: hsl(217, 19%, 38%)
+- Dark Grayish Blue: hsl(217, 19%, 24%)
+- Dark Blue: hsl(218, 23%, 16%)
+
+*/
+
+html {
+    font-size: 10px;
+}
+
+body {
+    background-color: hsl(218, 23%, 16%);
+    font-family: 'Manrope', sans-serif;
+}
+
+.advice {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 90%;
+    max-width: 50rem;
+    min-height: 20rem;
+    margin: 10rem auto 0 auto;
+    text-align: center;
+    background-color: hsl(217, 19%, 24%);
+    border-radius: 9px;
+    padding: 2rem 0;
+    align-items: center;
+
+}
+
+.advice__heading {
+    font-size: 1rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: hsl(150, 100%, 66%);
+    font-weight: 800;
+    margin-bottom: 2rem;
+}
+
+.advice__paragraph {
+    color: hsl(193, 38%, 86%);
+    font-size: 1.8rem;
+    font-weight: 800;
+    padding: 0 1rem;
+}
+
+.advice__line {
+    margin-bottom: 4rem;
+}
+
+.line {
+    display: flex;
+    align-items: center;
+}
+
+.advice__dice {
+    display: flex;
+    position: absolute;
+    width: 6rem;
+    height: 6rem;
+    left: 50%;
+    bottom: -2.5rem;
+    transform: translateX(-50%);
+    background-color: hsl(150, 100%, 66%);
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 2rem rgba(0, 0,0, .4);
+    cursor: pointer;
+}
+
+.advice__dice-icon {
+    position: relative;
+    z-index: 10;
+}
+
+.advice__dice:hover:before {
+    content: "";
+    position: absolute;
+    height: 1.8rem;
+    width: 1.8rem;
+    background-image: linear-gradient(hsl(253, 100%, 57%), hsl(135, 98%, 52%));
+    animation: rotate 1s linear infinite;
+}
+
+.advice__dice:hover {
+    box-shadow: 0 0 2rem hsl(150, 100%, 66%);
+    transform: translate(-50%, -1px);
+}
+
+@media (min-width: 900px) {
+    .advice {
+        margin: 15rem auto;
+    }
+
+    .advice__heading {
+        font-size: 1.6rem;
+    }
+
+    .advice__paragraph {
+        padding: 0 3rem;
+        font-size: 2.6rem;
+    }
+}
+
+@keyframes rotate {
+
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
