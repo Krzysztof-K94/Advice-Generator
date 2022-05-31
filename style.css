@@ -19,6 +19,10 @@ html {
 body {
     background-color: hsl(218, 23%, 16%);
     font-family: 'Manrope', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
 .advice {
@@ -34,7 +38,10 @@ body {
     border-radius: 9px;
     padding: 2rem 0;
     align-items: center;
+}
 
+.advice.hidden {
+    display: none;
 }
 
 .advice__heading {
@@ -112,13 +119,21 @@ body {
     }
 }
 
-@keyframes rotate {
-
-    0% {
-        transform: rotate(0);
-    }
-
-    100% {
-        transform: rotate(360deg);
-    }
+.loader {
+    width: 12rem;
+    height: 12rem;
+    border-radius: 50%;
+    border: 1.2rem solid rgba(206, 227, 233, .5);
+    border-top: 1.2rem solid hsl(135, 98%, 52%);
+    animation: 2s rotate linear infinite;
 }
+
+.loader.hidden {
+    display: none;
+}
+
+@keyframes rotate {
+    0% {transform: rotate(0)}
+    100% {transform: rotate(360deg);}
+}
+
